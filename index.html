@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Imagens</title>
+  <style>
+    .container {
+      position: relative;
+      width: 80%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .borda {
+      border: 1px solid black;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 472px;
+      height: 394px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="borda">
+      <div id="facebook-post">
+        <style>
+          @import 'https://fonts.googleapis.com/css?family=Permanent+Marker';
+    
+          * {
+            box-sizing: border-box;
+          }
+    
+          #facebook-post {
+            font-family: 'Permanent Marker';
+            width: 472px;
+            height: 394px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+          }
+    
+          .text {
+            display: block;
+            text-align: center;
+            width: 80%;
+            font-size: 60px;
+            margin: 0 auto;
+            padding-top: 50px;
+            color:  #f1f1f1;
+            text-transform: lowercase;
+          }
+        </style>
+        <span class="text" contenteditable>Hot air for a cool breeze</span>
+      </div>
+    </div> <!-- fim borda -->
+  </div>
+  
+  <div class="container">
+    <a href="#" id="downloadBtn">Download image</a>
+    <a href="#" id="link" hidden></a>
+  </div>
+
+  <script src="public/js/html2canvas.js"></script>
+
+  <script>
+    const download = document.getElementById('downloadBtn');
+    const image = document.getElementById('facebook-post');
+    const link = document.getElementById('link');
+    image.style.backgroundImage = 'url(https://images.pexels.com/photos/259571/pexels-photo-259571.jpeg)';
+
+    download.addEventListener('click', function(e) {
+        html2canvas(image, {
+          onrendered: function(canvas) {
+            link.href = canvas.toDataURL();
+            link.download = 'image.png';
+            link.click();
+          }
+        });
+    }, false);
+  </script>
+
+</body>
+</html>
