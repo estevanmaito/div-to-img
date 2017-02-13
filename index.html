@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <title>div-to-image</title>
+    <link rel="stylesheet" href="static/fonts.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Imagens</title>
@@ -13,7 +28,7 @@
 
     .borda {
       border: 1px solid black;
-      position: absolute;
+      /* position: absolute; */
       top: 50px;
       left: 0;
       width: 472px;
@@ -54,21 +69,51 @@
         </style>
         <span class="text" contenteditable>Hot air for a cool breeze</span>
       </div>
-    </div> <!-- fim borda -->
   </div>
   
   <div class="container">
+    <label for="imageUrl">Image URL</label>
+    <input type="url" id="imageUrl">
+    <br>
+    <label for="imageWidth">Image Width</label>
+    <input type="text" id="imageWidth">
+    <br>
+    <label for="imageHeight">Image Height</label>
+    <input type="text" id="imageHeight">
+    <br>
     <a href="#" id="downloadBtn">Download image</a>
     <a href="#" id="link" hidden></a>
   </div>
 
-  <script src="public/js/html2canvas.js"></script>
+  <script src="js/html2canvas.js"></script>
 
   <script>
+    function toDataUrl(src, callback, outputFormat) {
+      var img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = function() {
+        var canvas = document.createElement('CANVAS');
+        var ctx = canvas.getContext('2d');
+        var dataURL;
+        canvas.height = this.height;
+        canvas.width = this.width;
+        ctx.drawImage(this, 0, 0);
+        dataURL = canvas.toDataURL(outputFormat);
+        callback(dataURL);
+      };
+      img.src = src;
+      if (img.complete || img.complete === undefined) {
+        img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+        img.src = src;
+      }
+    }
     const download = document.getElementById('downloadBtn');
     const image = document.getElementById('facebook-post');
     const link = document.getElementById('link');
-    image.style.backgroundImage = 'url(https://images.pexels.com/photos/259571/pexels-photo-259571.jpeg)';
+    toDataUrl('https://images.pexels.com/photos/259571/pexels-photo-259571.jpeg', function(base64Img) {
+      image.style.backgroundImage = 'url('+ base64Img +')';
+    });
+    
 
     download.addEventListener('click', function(e) {
         html2canvas(image, {
@@ -82,4 +127,4 @@
   </script>
 
 </body>
-</html>
+</html> -->
