@@ -24,13 +24,11 @@
 
 <script>
 import ImageComponent from './components/Image'
-import ImageForm from './components/Form/ImageForm.vue'
 
 export default {
   name: 'app',
   components: {
-    ImageComponent,
-    ImageForm
+    ImageComponent
   }
 }
 </script>

@@ -6,26 +6,28 @@
         v-for="direction in buttonDirections"
         :activeClass="activeClass"
         :direction="direction"
-        @changeActive="textAlign"
+        @changeActive="imageAlign"
       >
-        <i :class="'glyphicon glyphicon-align-' + direction"></i>
+        <i v-if="direction === 'center'" class="glyphicon glyphicon-object-align-horizontal"></i>
+        <i :class="'glyphicon glyphicon-object-align-' + direction"></i>
       </align-button-group>
     </div>
   </div>
 </template>
 
 <script>
-  import AlignButtonGroup from './AlignButtonGroup.vue'
+  import AlignButtonGroup from '../Form/AlignButtonGroup.vue'
 
   export default {
     data() {
       return {
-        activeClass: 'center',
+        activeClass: 'horizontal',
         buttonDirections: [
-          'left',
+          'top',
+          'bottom',
           'center',
-          'right',
-          'justify'
+          'left',
+          'right'
         ]
       }
     },
@@ -33,9 +35,9 @@
       AlignButtonGroup
     },
     methods: {
-      textAlign(value) {
+      imageAlign(value) {
         this.activeClass = value
-        this.$store.commit('textAlignChange', value)
+        this.$store.commit('imageAlignChange', value)
       }
     }
   }

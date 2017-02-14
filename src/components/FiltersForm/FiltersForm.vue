@@ -34,8 +34,8 @@
 
 <script>
   import ImageFilters from './ImageFilters.vue'
-  import ColorPicker from './ColorPicker.vue'
-  import InputRange from './InputRange.vue'
+  import ColorPicker from '../Form/ColorPicker.vue'
+  import InputRange from '../Form/InputRange.vue'
   import domtoimage from 'dom-to-image'
 
   export default {

@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import InputRange from './InputRange.vue'
+  import InputRange from '../Form/InputRange.vue'
 
   export default {
     components: {

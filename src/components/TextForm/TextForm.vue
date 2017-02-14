@@ -59,15 +59,15 @@
 <script>
   import { mapState } from 'vuex'
   import ImageFonts from './ImageFonts.vue'
-  import ColorPicker from './ColorPicker.vue'
   import ImageTextAlignment from './ImageTextAlignment.vue'
-  import InputRange from './InputRange.vue'
+  import ColorPicker from '../Form/ColorPicker.vue'
+  import InputRange from '../Form/InputRange.vue'
 
   export default {
     components: {
       ImageFonts,
-      ColorPicker,
       ImageTextAlignment,
+      ColorPicker,
       InputRange
     },
     computed: mapState([

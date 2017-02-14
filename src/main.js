@@ -5,9 +5,9 @@ import VueRouter from 'vue-router'
 import App from './App'
 import store from './store'
 
-import ImageForm from './components/Form/ImageForm.vue'
-import TextForm from './components/Form/TextForm.vue'
-import FiltersForm from './components/Form/FiltersForm.vue'
+import ImageForm from './components/ImageForm/ImageForm.vue'
+import TextForm from './components/TextForm/TextForm.vue'
+import FiltersForm from './components/FiltersForm/FiltersForm.vue'
 
 Vue.use(VueRouter)
 
