@@ -1,52 +1,36 @@
 <template>
   <div class="form-group">
-    <label>Filters</label>
-    <div class="btn-group">
-      <button 
-        :class="[activeClass === 'none' ? 'active' : '', 'btn', 'btn-default']"
-        @click="applyFilter('none')"
-      >
-        none
-      </button>
-      <button 
-        :class="[activeClass === 'blur' ? 'active' : '', 'btn', 'btn-default']"
-        @click="applyFilter('blur')"
-      >
-        Blur
-      </button>
-      <button 
-        :class="[activeClass === '1977' ? 'active' : '', 'btn', 'btn-default']"
-        @click="applyFilter('1977')"
-      >
-        1977
-      </button>
-      <button 
-        :class="[activeClass === 'grayscale' ? 'active' : '', 'btn', 'btn-default']"
-        @click="applyFilter('grayscale')"
-      >
-        Grayscale
-      </button>
-      <button 
-        :class="[activeClass === 'brooklyn' ? 'active' : '', 'btn', 'btn-default']"
-        @click="applyFilter('brooklyn')"
-      >
-        Brooklyn
-      </button>
-    </div>
+    <input-range
+      v-for="(filter, key) in filters"
+      :defaultRange="filter.value"
+      :min="filter.min"
+      :max="filter.max"
+      :name="key"
+      @rangeChange="applyFilter"
+    >
+      {{ filter.name }}
+    </input-range>
   </div>
 </template>
 
 <script>
+  import InputRange from './InputRange.vue'
+
   export default {
-    data() {
-      return {
-        activeClass: 'none'
+    components: {
+      InputRange
+    },
+    computed: {
+      filters() {
+        return this.$store.state.filters
       }
     },
     methods: {
       applyFilter(filter) {
-        this.activeClass = filter
-        this.$store.commit('filterChange', filter)
+        this.$store.commit('filterChange', {
+          name: filter.name,
+          value: filter.value
+        })
       }
     }
   }

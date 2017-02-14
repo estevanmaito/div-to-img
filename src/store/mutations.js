@@ -2,6 +2,9 @@ export default {
   textChange(state, value) {
     state.text = value
   },
+  textBoxSizeChange(state, payload) {
+    state.textBoxSize = payload.value
+  },
   fontChange(state, value) {
     state.selectedFont = value
   },
@@ -11,27 +14,8 @@ export default {
   fontSizeChange(state, value) {
     state.fontSize = value
   },
-  filterChange(state, value) {
-    if (value === 'none') {
-      state.filter = ''
-      return
-    }
-    if (value === 'blur') {
-      state.filter = 'blur(5px)'
-      return
-    }
-    if (value === '1977') {
-      state.filter = 'sepia(0%) brightness(110%) contrast(110%) saturate(130%)'
-      return
-    }
-    if (value === 'grayscale') {
-      state.filter = 'grayscale(100%)'
-      return
-    }
-    if (value === 'brooklyn') {
-      state.filter = 'contrast(90%) brightness(110%)'
-      return
-    }
+  filterChange(state, payload) {
+    state.filters[payload.name].value = payload.value
   },
   urlChange(state, value) {
     state.imageUrl = value
@@ -48,8 +32,8 @@ export default {
   overlayColorChange(state, value) {
     state.overlayColor = value
   },
-  overlayOpacityChange(state, value) {
-    state.overlayOpacity = value
+  overlayOpacityChange(state, payload) {
+    state.overlayOpacity = payload.value
   },
   imageAlignChange(state, value) {
     state.imageAlign = value

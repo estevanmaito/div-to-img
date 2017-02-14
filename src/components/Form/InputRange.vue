@@ -3,7 +3,7 @@
     <div class="col-xs-8">
       <div class="form-group">
         <label><slot></slot></label>
-        <input type="range" :value="defaultRange" min="0" max="100" @input="rangeChange">
+        <input type="range" :value="defaultRange" :min="min" :max="max" @input="rangeChange">
       </div>
     </div>
     <div class="col-xs-4">
@@ -17,10 +17,13 @@
 
 <script>
   export default {
-    props: ['defaultRange'],
+    props: ['defaultRange', 'min', 'max', 'name'],
     methods: {
       rangeChange(event) {
-        this.$emit('rangeChange', event.target.value)
+        this.$emit('rangeChange', {
+          value: event.target.value,
+          name: this.name
+        })
       }
     }
   }

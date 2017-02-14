@@ -21,8 +21,8 @@
   export default {
     data() {
       return {
-        textLeft: 0,
-        textTop: 0
+        textLeft: '10px',
+        textTop: '10px'
       }
     },
     computed: {
@@ -32,7 +32,7 @@
           backgroundPosition: this.$store.state.imageAlign,
           width: this.$store.getters.imageWidth,
           height: this.$store.getters.imageHeight,
-          filter: this.$store.state.filter
+          filter: this.$store.getters.filter
         }
       },
       textStyle() {
@@ -42,9 +42,10 @@
           fontFamily: this.$store.state.selectedFont,
           fontSize: this.$store.getters.fontSize,
           color: this.$store.state.fontColor,
-          maxWidth: this.$store.getters.imageWidth,
+          width: this.$store.getters.textBoxSize,
           maxHeight: this.$store.getters.imageHeight,
-          textAlign: this.$store.state.textAlign
+          textAlign: this.$store.state.textAlign,
+          boxShadow: this.$route.path === '/text' ? '0 0 0 2px black' : ''
         }
       },
       canvasStyle() {
@@ -87,14 +88,12 @@
   #facebook-post {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     position: relative;
   }
 
   #overlay {
     content: '';
     position: absolute;
-    background: #000;
     top: 0;
     left: 0;
     width: 100%;
@@ -108,7 +107,7 @@
   
   .text {
     display: block;
-    width: 80%;
     position: absolute;
+    cursor: grab;
   }
 </style>
