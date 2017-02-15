@@ -52,6 +52,9 @@
           Text box size (%)
         </input-range>
       </div>
+      <div class="row">
+        <font-style></font-style>
+      </div>
     </div>
   </div>
 </template>
@@ -61,13 +64,15 @@
   import ImageTextAlignment from './ImageTextAlignment.vue'
   import ColorPicker from '../Form/ColorPicker.vue'
   import InputRange from '../Form/InputRange.vue'
+  import FontStyle from './FontStyle.vue'
 
   export default {
     components: {
       ImageFonts,
       ImageTextAlignment,
       ColorPicker,
-      InputRange
+      InputRange,
+      FontStyle
     },
     computed: {
       text() {

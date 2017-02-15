@@ -6,9 +6,17 @@ export default {
     'Permanent Marker',
     'Assistant',
     'PT Sans',
-    'Roboto Mono'
+    'Roboto Mono',
+    'Anton',
+    'Josefin Sans',
+    'Open Sans Condensed',
+    'Raleway',
+    'Sansita'
   ],
   selectedFont: 'Permanent Marker',
   fontColor: '#ffffff',
-  fontSize: 60
+  fontSize: 60,
+  fontWeight: 'normal',
+  fontStyle: 'normal',
+  textDecoration: 'none'
 }

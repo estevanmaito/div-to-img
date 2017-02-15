@@ -14,7 +14,9 @@
               <a><i class="glyphicon glyphicon-tasks"></i></a>
             </router-link>
           </ul>
-          <router-view></router-view>
+          <keep-alive>
+            <router-view></router-view>
+          </keep-alive>
         </div>
         <div class="col-sm-12 col-md-9">
           <image-component></image-component>

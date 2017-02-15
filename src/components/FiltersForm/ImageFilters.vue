@@ -1,11 +1,15 @@
 <template>
   <div>
-    <a 
-      class="pull-right reset-filters"
-      @click="resetFilters"
-    >
-      Reset filters
-    </a>
+    <div class="row">
+      <div class="col-xs-12">
+        <a 
+          class="pull-right reset-filters"
+          @click="resetFilters"
+        >
+          Reset filters
+        </a>
+      </div>
+    </div>
     <div class="form-group">
       <div class="row">
         <input-range

@@ -16,5 +16,14 @@ export default {
   },
   fontSizeChange(state, value) {
     state.fontSize = value
+  },
+  fontStyleChange(state) {
+    state.fontStyle = state.fontStyle === 'normal' ? 'italic' : 'normal'
+  },
+  fontWeightChange(state) {
+    state.fontWeight = state.fontWeight === 'normal' ? 'bold' : 'normal'
+  },
+  textDecorationChange(state) {
+    state.textDecoration = state.textDecoration === 'none' ? 'underline' : 'none'
   }
 }
