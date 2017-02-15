@@ -12,14 +12,16 @@
           </color-picker>
         </div>
         <div class="col-xs-9">
-          <input-range
-            :defaultRange="overlayOpacity"
-            :min="0"
-            :max="100"
-            @rangeChange="overlayOpacityChange"
-          >
-            Opacity (%)
-          </input-range>
+          <div class="row">
+            <input-range
+              :defaultRange="overlayOpacity"
+              :min="0"
+              :max="100"
+              @rangeChange="overlayOpacityChange"
+            >
+              Opacity (%)
+            </input-range>
+          </div>
         </div>
       </div>
       <button 
@@ -46,10 +48,10 @@
     },
     computed: {
       overlayColor() {
-        return this.$store.state.overlayColor
+        return this.$store.state.filtersModule.overlayColor
       },
       overlayOpacity() {
-        return this.$store.state.overlayOpacity
+        return this.$store.state.filtersModule.overlayOpacity
       }
     },
     methods: {

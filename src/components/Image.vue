@@ -29,7 +29,7 @@
       imageStyle() {
         return {
           backgroundImage: this.$store.getters.backgroundImage,
-          backgroundPosition: this.$store.state.imageAlign,
+          backgroundPosition: this.$store.state.imageModule.imageAlign,
           width: this.$store.getters.imageWidth,
           height: this.$store.getters.imageHeight,
           filter: this.$store.getters.filter
@@ -39,12 +39,12 @@
         return {
           left: this.textLeft,
           top: this.textTop,
-          fontFamily: this.$store.state.selectedFont,
+          fontFamily: this.$store.state.textModule.selectedFont,
           fontSize: this.$store.getters.fontSize,
-          color: this.$store.state.fontColor,
+          color: this.$store.state.textModule.fontColor,
           width: this.$store.getters.textBoxSize,
           maxHeight: this.$store.getters.imageHeight,
-          textAlign: this.$store.state.textAlign,
+          textAlign: this.$store.state.textModule.textAlign,
           boxShadow: this.$route.path === '/text' ? '0 0 0 2px black' : ''
         }
       },
@@ -55,11 +55,11 @@
         }
       },
       imageText() {
-        return this.$store.state.text
+        return this.$store.state.textModule.text
       },
       overlayStyle() {
         return {
-          backgroundColor: this.$store.state.overlayColor,
+          backgroundColor: this.$store.state.filtersModule.overlayColor,
           opacity: this.$store.getters.overlayOpacity
         }
       }

@@ -19,10 +19,10 @@
   export default {
     computed: {
       imageHeight() {
-        return this.$store.state.imageHeight
+        return this.$store.state.imageModule.imageHeight
       },
       imageWidth() {
-        return this.$store.state.imageWidth
+        return this.$store.state.imageModule.imageWidth
       }
     },
     methods: {

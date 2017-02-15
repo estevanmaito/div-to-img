@@ -1,15 +1,17 @@
 <template>
   <div class="form-group">
-    <input-range
-      v-for="(filter, key) in filters"
-      :defaultRange="filter.value"
-      :min="filter.min"
-      :max="filter.max"
-      :name="key"
-      @rangeChange="applyFilter"
-    >
-      {{ filter.name }}
-    </input-range>
+    <div class="row">
+      <input-range
+        v-for="(filter, key) in filters"
+        :defaultRange="filter.value"
+        :min="filter.min"
+        :max="filter.max"
+        :name="key"
+        @rangeChange="applyFilter"
+      >
+        {{ filter.name }}
+      </input-range>
+    </div>
   </div>
 </template>
 
@@ -22,7 +24,7 @@
     },
     computed: {
       filters() {
-        return this.$store.state.filters
+        return this.$store.state.filtersModule.filters
       }
     },
     methods: {

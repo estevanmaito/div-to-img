@@ -1,7 +1,7 @@
 <template>
   <div class="form-group">
     <label><slot></slot></label>
-    <input type="color" :value="defaultColor" @change="colorChange" class="form-control">
+    <input type="color" :value="defaultColor" @input="colorChange" class="form-control">
   </div>
 </template>
 

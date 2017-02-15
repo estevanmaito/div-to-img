@@ -12,7 +12,7 @@
     props: ['selectedFont'],
     computed: {
       fonts() {
-        return this.$store.state.fonts
+        return this.$store.state.textModule.fonts
       }
     },
     methods: {

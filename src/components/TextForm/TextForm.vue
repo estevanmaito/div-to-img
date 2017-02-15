@@ -27,9 +27,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-5">
           <div class="form-group">
-            <label>Font size</label>
+            <label>Font size (px)</label>
             <input 
               type="number" 
               class="form-control" 
@@ -38,7 +38,7 @@
             >
           </div>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-7">
           <image-text-alignment></image-text-alignment>
         </div>
       </div>
@@ -57,7 +57,6 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
   import ImageFonts from './ImageFonts.vue'
   import ImageTextAlignment from './ImageTextAlignment.vue'
   import ColorPicker from '../Form/ColorPicker.vue'
@@ -70,13 +69,23 @@
       ColorPicker,
       InputRange
     },
-    computed: mapState([
-      'text',
-      'fontSize',
-      'fontColor',
-      'selectedFont',
-      'textBoxSize'
-    ]),
+    computed: {
+      text() {
+        return this.$store.state.textModule.text
+      },
+      fontSize() {
+        return this.$store.state.textModule.fontSize
+      },
+      fontColor() {
+        return this.$store.state.textModule.fontColor
+      },
+      selectedFont() {
+        return this.$store.state.textModule.selectedFont
+      },
+      textBoxSize() {
+        return this.$store.state.textModule.textBoxSize
+      }
+    },
     methods: {
       textChange(event) {
         this.$store.commit('textChange', event.target.value)
