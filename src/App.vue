@@ -5,13 +5,13 @@
         <div class="col-sm-12 col-md-3 scroll">
           <ul class="nav nav-tabs">
             <router-link to="/" tag="li" exact>
-              <a><i class="glyphicon glyphicon-picture"></i></a>
+              <a><i class="fa fa-picture-o"></i></a>
             </router-link>
             <router-link to="/text" tag="li" exact>
-              <a><i class="glyphicon glyphicon-text-size"></i></a>
+              <a><i class="fa fa-font"></i></a>
             </router-link>
             <router-link to="/filters" tag="li" exact>
-              <a><i class="glyphicon glyphicon-tasks"></i></a>
+              <a><i class="fa fa-sliders"></i></a>
             </router-link>
           </ul>
           <keep-alive>

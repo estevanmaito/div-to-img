@@ -1,5 +1,6 @@
 <template>
   <div class="col-sm-12">
+    <i class="fa fa-arrows" aria-hidden="true"></i> Move text by dragging it
     <div id="download" :style="canvasStyle" @dragover.prevent="" @drop="drop">
       <div id="facebook-post" :style="imageStyle">
         <div id="overlay" :style="overlayStyle"></div>

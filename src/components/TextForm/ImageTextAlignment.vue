@@ -8,7 +8,7 @@
         :direction="direction"
         @changeActive="textAlign"
       >
-        <i :class="'glyphicon glyphicon-align-' + direction"></i>
+        <i :class="'fa fa-align-' + direction"></i>
       </align-button-group>
     </div>
   </div>

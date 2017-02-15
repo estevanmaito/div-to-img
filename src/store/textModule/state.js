@@ -1,5 +1,5 @@
 export default {
-  text: 'HOT AIR FOR A COOL BREEZE',
+  text: 'hot air for a cool breeze',
   textAlign: 'center',
   textBoxSize: 80,
   fonts: [

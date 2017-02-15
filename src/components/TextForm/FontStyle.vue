@@ -8,7 +8,7 @@
             :class="[italicActive ? 'active' : '', 'btn', 'btn-default']"
             @click="fontStyleChange"
           >
-            <i class="glyphicon glyphicon-italic"></i>
+            <i class="fa fa-italic"></i>
           </button>
         </div>
         <div class="btn-group">
@@ -16,7 +16,7 @@
             :class="[boldActive ? 'active' : '', 'btn', 'btn-default']"
             @click="fontWeightChange"
           >
-            <i class="glyphicon glyphicon-bold"></i>
+            <i class="fa fa-bold"></i>
           </button>
         </div>
         <div class="btn-group">
@@ -24,7 +24,7 @@
             :class="[underlineActive ? 'active' : '', 'btn', 'btn-default']"
             @click="textDecorationChange"
           >
-            <i class="glyphicon glyphicon-text-color"></i>
+            <i class="fa fa-underline"></i>
           </button>
         </div>
       </div>
