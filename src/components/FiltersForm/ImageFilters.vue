@@ -1,16 +1,24 @@
 <template>
-  <div class="form-group">
-    <div class="row">
-      <input-range
-        v-for="(filter, key) in filters"
-        :defaultRange="filter.value"
-        :min="filter.min"
-        :max="filter.max"
-        :name="key"
-        @rangeChange="applyFilter"
-      >
-        {{ filter.name }}
-      </input-range>
+  <div>
+    <a 
+      class="pull-right reset-filters"
+      @click="resetFilters"
+    >
+      Reset filters
+    </a>
+    <div class="form-group">
+      <div class="row">
+        <input-range
+          v-for="(filter, key) in filters"
+          :defaultRange="filter.value"
+          :min="filter.min"
+          :max="filter.max"
+          :name="key"
+          @rangeChange="applyFilter"
+        >
+          {{ filter.name }}
+        </input-range>
+      </div>
     </div>
   </div>
 </template>
@@ -33,11 +41,16 @@
           name: filter.name,
           value: filter.value
         })
+      },
+      resetFilters() {
+        this.$store.commit('resetFilters')
       }
     }
   }
 </script>
 
-<style>
-  
+<style scoped>
+  .reset-filters {
+    cursor: pointer;
+  }
 </style>

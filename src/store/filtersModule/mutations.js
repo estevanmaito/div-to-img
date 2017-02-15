@@ -7,5 +7,15 @@ export default {
   },
   filterChange(state, payload) {
     state.filters[payload.name].value = payload.value
+  },
+  resetFilters(state) {
+    let filters = [0, 100, 100, 0, 0, 0, 100, 0]
+    let i = 0
+    for (let filter in state.filters) {
+      state.filters[filter].value = filters[i]
+      i++
+    }
+    state.overlayColor = '#000000'
+    state.overlayOpacity = 0
   }
 }

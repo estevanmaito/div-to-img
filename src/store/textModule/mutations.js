@@ -2,6 +2,9 @@ export default {
   textChange(state, value) {
     state.text = value
   },
+  textAlignChange(state, value) {
+    state.textAlign = value
+  },
   textBoxSizeChange(state, payload) {
     state.textBoxSize = payload.value
   },
@@ -13,8 +16,5 @@ export default {
   },
   fontSizeChange(state, value) {
     state.fontSize = value
-  },
-  textAlignChange(state, value) {
-    state.textAlign = value
   }
 }
